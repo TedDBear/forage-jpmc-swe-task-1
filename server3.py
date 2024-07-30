@@ -158,7 +158,8 @@ def generate_csv():
 
 def read_csv():
     """ Read a CSV or order history into a list. """
-    with open('test.csv', 'rt') as f:
+    test = 'E:/Microsoft VS Projects/Job Simulations/forage-jpmc-swe-task-1/test.csv'
+    with open(test, 'rt') as f:
         for time, stock, side, order, size in csv.reader(f):
             yield dateutil.parser.parse(time), stock, side, float(order), int(size)
 
